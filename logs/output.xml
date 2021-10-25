@@ -1,101 +1,468 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211021 18:31:50.646" rpa="false" schemaversion="2">
-<suite id="s1" name="Webautomation" source="C:\Users\Carli\Desktop\Curso-PrimeHero\tests\webautomation.robot">
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211024 23:40:46.860" rpa="false" schemaversion="2">
+<suite id="s1" name="Webautomation" source="C:\Users\Carli\Desktop\primehero\tests\webautomation.robot">
 <test id="s1-t1" name="Caso de Teste 01: Pesquisar produto existente">
-<kw name="Abrir navegador" library="kws_webautomation" type="SETUP">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20211021 18:31:50.836" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20211021 18:31:50.836" endtime="20211021 18:31:51.974"/>
+<msg timestamp="20211024 23:40:47.048" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211024 23:40:47.048" endtime="20211024 23:40:48.107"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20211021 18:31:51.974" endtime="20211021 18:31:52.089"/>
-</kw>
-<status status="PASS" starttime="20211021 18:31:50.835" endtime="20211021 18:31:52.089"/>
+<status status="PASS" starttime="20211024 23:40:47.048" endtime="20211024 23:40:48.107"/>
 </kw>
 <kw name="Acessar a página home do site Automation Practice" library="kws_webautomation">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20211021 18:31:52.090" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
-<status status="PASS" starttime="20211021 18:31:52.089" endtime="20211021 18:31:56.285"/>
+<msg timestamp="20211024 23:40:48.108" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20211024 23:40:48.108" endtime="20211024 23:40:52.752"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20211021 18:31:56.288" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20211021 18:31:56.285" endtime="20211021 18:31:56.288"/>
+<msg timestamp="20211024 23:40:52.755" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211024 23:40:52.752" endtime="20211024 23:40:52.755"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=//*[@id="block_top_menu"]/ul</arg>
+<arg>${HOME.HEADER_OPTIONS}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211021 18:31:56.288" endtime="20211021 18:31:56.304"/>
+<status status="PASS" starttime="20211024 23:40:52.756" endtime="20211024 23:40:52.770"/>
 </kw>
-<status status="PASS" starttime="20211021 18:31:52.089" endtime="20211021 18:31:56.304"/>
+<status status="PASS" starttime="20211024 23:40:48.107" endtime="20211024 23:40:52.770"/>
 </kw>
 <kw name="Digitar o nome do produto &quot;Blouse&quot; no campo de pesquisa" library="kws_webautomation" sourcename="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisa">
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id=search_query_top</arg>
+<arg>${HOME.INPUT_BUSCA}</arg>
 <arg>${PRODUTO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211021 18:31:56.305" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20211021 18:31:56.304" endtime="20211021 18:31:56.351"/>
+<msg timestamp="20211024 23:40:52.772" level="INFO">Typing text 'Blouse' into text field 'search_query_top'.</msg>
+<status status="PASS" starttime="20211024 23:40:52.771" endtime="20211024 23:40:52.822"/>
 </kw>
-<status status="PASS" starttime="20211021 18:31:56.304" endtime="20211021 18:31:56.351"/>
+<status status="PASS" starttime="20211024 23:40:52.771" endtime="20211024 23:40:52.822"/>
 </kw>
 <kw name="Clicar no botão pesquisar" library="kws_webautomation">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>name=submit_search</arg>
+<arg>${HOME.BTN_PESQUISAR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211021 18:31:56.352" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20211021 18:31:56.351" endtime="20211021 18:31:57.989"/>
+<msg timestamp="20211024 23:40:52.824" level="INFO">Clicking element 'submit_search'.</msg>
+<status status="PASS" starttime="20211024 23:40:52.823" endtime="20211024 23:40:53.907"/>
 </kw>
-<status status="PASS" starttime="20211021 18:31:56.351" endtime="20211021 18:31:57.989"/>
+<status status="PASS" starttime="20211024 23:40:52.823" endtime="20211024 23:40:53.908"/>
 </kw>
 <kw name="Conferir se o produto &quot;Blouse&quot; foi listado no site" library="kws_webautomation" sourcename="Conferir se o produto &quot;${PRODUTO}&quot; foi listado no site">
-<kw name="Page Should Contain Image" library="SeleniumLibrary">
-<arg>xpath=//*[@id="center_column"]//*[@src='http://automationpractice.com/img/p/7/7-home_default.jpg']</arg>
-<doc>Verifies image identified by ``locator`` is found from current page.</doc>
-<msg timestamp="20211021 18:31:58.002" level="INFO">Current page contains image 'xpath=//*[@id="center_column"]//*[@src='http://automationpractice.com/img/p/7/7-home_default.jpg']'.</msg>
-<status status="PASS" starttime="20211021 18:31:57.990" endtime="20211021 18:31:58.002"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME.IMG_BLOUSE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:40:53.908" endtime="20211024 23:40:53.926"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
+<arg>${HOME.TITLE_PAGE_PESQUISA}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20211021 18:31:58.004" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20211021 18:31:58.002" endtime="20211021 18:31:58.004"/>
+<msg timestamp="20211024 23:40:53.928" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20211024 23:40:53.926" endtime="20211024 23:40:53.928"/>
 </kw>
-<status status="PASS" starttime="20211021 18:31:57.989" endtime="20211021 18:31:58.004"/>
+<status status="PASS" starttime="20211024 23:40:53.908" endtime="20211024 23:40:53.929"/>
 </kw>
-<kw name="Fechar navegador" library="kws_webautomation" type="TEARDOWN">
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20211021 18:31:58.149" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211021 18:31:58.004" endtime="20211021 18:31:58.149"/>
+<msg timestamp="20211024 23:40:54.023" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211024 23:40:53.929" endtime="20211024 23:40:54.023"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20211021 18:31:58.149" endtime="20211021 18:32:00.244"/>
+<status status="PASS" starttime="20211024 23:40:54.023" endtime="20211024 23:40:56.114"/>
 </kw>
-<status status="PASS" starttime="20211021 18:31:58.004" endtime="20211021 18:32:00.244"/>
+<status status="PASS" starttime="20211024 23:40:53.929" endtime="20211024 23:40:56.114"/>
 </kw>
-<tag>Testar</tag>
-<status status="PASS" starttime="20211021 18:31:50.834" endtime="20211021 18:32:00.244"/>
+<tag>Test1</tag>
+<status status="PASS" starttime="20211024 23:40:47.047" endtime="20211024 23:40:56.114"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Pesquisar produto não existente">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211024 23:40:56.116" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211024 23:40:56.116" endtime="20211024 23:40:57.154"/>
+</kw>
+<status status="PASS" starttime="20211024 23:40:56.116" endtime="20211024 23:40:57.154"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="kws_webautomation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211024 23:40:57.155" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20211024 23:40:57.155" endtime="20211024 23:41:01.268"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211024 23:41:01.271" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211024 23:41:01.268" endtime="20211024 23:41:01.271"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME.HEADER_OPTIONS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:01.271" endtime="20211024 23:41:01.285"/>
+</kw>
+<status status="PASS" starttime="20211024 23:40:57.154" endtime="20211024 23:41:01.286"/>
+</kw>
+<kw name="Digitar o nome do produto &quot;itemNãoExistente&quot; no campo de pesquisa" library="kws_webautomation" sourcename="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.INPUT_BUSCA}</arg>
+<arg>${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:01.287" level="INFO">Typing text 'itemNãoExistente' into text field 'search_query_top'.</msg>
+<status status="PASS" starttime="20211024 23:41:01.286" endtime="20211024 23:41:01.335"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:01.286" endtime="20211024 23:41:01.336"/>
+</kw>
+<kw name="Clicar no botão pesquisar" library="kws_webautomation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME.BTN_PESQUISAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:01.337" level="INFO">Clicking element 'submit_search'.</msg>
+<status status="PASS" starttime="20211024 23:41:01.336" endtime="20211024 23:41:01.368"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:01.336" endtime="20211024 23:41:01.368"/>
+</kw>
+<kw name="Conferir mensagem &quot;No results were found for your search &quot;itemNãoExistente&quot;" library="kws_webautomation" sourcename="Conferir mensagem &quot;No results were found for your search &quot;${PRODUTO}&quot;">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${SEM_RESULTADOS.TITLE_PAGE_PESQUISA}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211024 23:41:02.419" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20211024 23:41:01.369" endtime="20211024 23:41:02.419"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEM_RESULTADOS.PRODUTO_NAO_ENCONTRADO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:02.419" endtime="20211024 23:41:02.433"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:01.369" endtime="20211024 23:41:02.434"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211024 23:41:02.534" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211024 23:41:02.434" endtime="20211024 23:41:02.534"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211024 23:41:02.534" endtime="20211024 23:41:04.624"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:02.434" endtime="20211024 23:41:04.624"/>
+</kw>
+<tag>Test2</tag>
+<status status="PASS" starttime="20211024 23:40:56.115" endtime="20211024 23:41:04.624"/>
+</test>
+<test id="s1-t3" name="Caso de Teste 03: Listar Produtos">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211024 23:41:04.627" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211024 23:41:04.626" endtime="20211024 23:41:05.663"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:04.626" endtime="20211024 23:41:05.663"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="kws_webautomation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211024 23:41:05.664" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20211024 23:41:05.664" endtime="20211024 23:41:09.354"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211024 23:41:09.357" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211024 23:41:09.354" endtime="20211024 23:41:09.358"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME.HEADER_OPTIONS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:09.358" endtime="20211024 23:41:09.373"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:05.663" endtime="20211024 23:41:09.373"/>
+</kw>
+<kw name="Passar o mouse por cima da categoria &quot;Women&quot; no menu principal superior de categorias" library="kws_webautomation">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${HOME.CATEGORY_WOMEN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211024 23:41:09.374" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20211024 23:41:09.374" endtime="20211024 23:41:09.657"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:09.374" endtime="20211024 23:41:09.658"/>
+</kw>
+<kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="kws_webautomation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME.SUB_SUMMER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:09.659" level="INFO">Clicking element 'xpath=//*[@id="block_top_menu"]/ul/li[1]//*[contains(text(),'Summer Dresses')]'.</msg>
+<status status="PASS" starttime="20211024 23:41:09.658" endtime="20211024 23:41:11.259"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:09.658" endtime="20211024 23:41:11.259"/>
+</kw>
+<kw name="Conferir se os produtos da sub-categoria &quot;Summer Dresses&quot; foram mostrados na página" library="kws_webautomation">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUMMER.PAGE_NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:11.259" endtime="20211024 23:41:11.276"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUMMER.RESULTS_SUMMER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:11.277" endtime="20211024 23:41:11.288"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:11.259" endtime="20211024 23:41:11.288"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211024 23:41:11.409" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211024 23:41:11.289" endtime="20211024 23:41:11.409"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211024 23:41:11.409" endtime="20211024 23:41:13.476"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:11.288" endtime="20211024 23:41:13.477"/>
+</kw>
+<tag>Test3</tag>
+<status status="PASS" starttime="20211024 23:41:04.626" endtime="20211024 23:41:13.477"/>
+</test>
+<test id="s1-t4" name="Caso de Teste 04: Adicionar Cliente">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211024 23:41:13.480" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211024 23:41:13.480" endtime="20211024 23:41:14.516"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:13.479" endtime="20211024 23:41:14.516"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="kws_webautomation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211024 23:41:14.516" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20211024 23:41:14.516" endtime="20211024 23:41:19.080"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211024 23:41:19.083" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211024 23:41:19.080" endtime="20211024 23:41:19.083"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME.HEADER_OPTIONS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:19.083" endtime="20211024 23:41:19.098"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:14.516" endtime="20211024 23:41:19.098"/>
+</kw>
+<kw name="Clicar em &quot;Sign in&quot;" library="kws_webautomation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME.SIGN_IN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:19.100" level="INFO">Clicking element 'xpath=//div[@class="header_user_info"]/a'.</msg>
+<status status="PASS" starttime="20211024 23:41:19.099" endtime="20211024 23:41:21.047"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:19.098" endtime="20211024 23:41:21.047"/>
+</kw>
+<kw name="Informar um e-mail válido" library="kws_webautomation">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${SIGN_IN.TITLE_SIGN_IN}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211024 23:41:21.051" level="INFO">Page title is 'Login - My Store'.</msg>
+<status status="PASS" starttime="20211024 23:41:21.048" endtime="20211024 23:41:21.051"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.EMAIL}</arg>
+<arg>${DADOS.EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:21.052" level="INFO">Typing text 'testeautomacao2025@gmail.com' into text field 'xpath=//div[@id="center_column"]//input[@id='email_create']'.</msg>
+<status status="PASS" starttime="20211024 23:41:21.051" endtime="20211024 23:41:21.112"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:21.048" endtime="20211024 23:41:21.112"/>
+</kw>
+<kw name="Clicar em &quot;Create an account&quot;" library="kws_webautomation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGN_IN.CREATE_ACC}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:21.113" level="INFO">Clicking element 'xpath=//div[@class="submit"]//button[@id="SubmitCreate"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:21.113" endtime="20211024 23:41:21.146"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:21.112" endtime="20211024 23:41:21.146"/>
+</kw>
+<kw name="Preencher os dados obrigatórios" library="kws_webautomation">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SIGN_IN.TELA_CREATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:21.147" endtime="20211024 23:41:23.931"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.NOME}</arg>
+<arg>${DADOS.NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:23.932" level="INFO">Typing text 'teste' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="customer_firstname"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:23.931" endtime="20211024 23:41:23.983"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.SOBRENOME}</arg>
+<arg>${DADOS.SOBRENOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:23.984" level="INFO">Typing text 'automacao' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="customer_lastname"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:23.983" endtime="20211024 23:41:24.034"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${SIGN_IN.PASSWD}</arg>
+<arg>${DADOS.SENHA}</arg>
+<arg>clear=true</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.035" level="INFO">Typing password into text field 'xpath=//*[@id="account-creation_form"]//input[@name="passwd"]'.</msg>
+<msg timestamp="20211024 23:41:24.061" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211024 23:41:24.086" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211024 23:41:24.034" endtime="20211024 23:41:24.086"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SIGN_IN.DATA_DIA}</arg>
+<arg>${DADOS.DIA}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211024 23:41:24.087" level="INFO">Selecting options from selection list 'xpath=//*[@id="account-creation_form"]//select[@id="days"]' by value 15.</msg>
+<status status="PASS" starttime="20211024 23:41:24.087" endtime="20211024 23:41:24.126"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SIGN_IN.DATA_MES}</arg>
+<arg>${DADOS.MES}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211024 23:41:24.127" level="INFO">Selecting options from selection list 'xpath=//*[@id="account-creation_form"]//select[@id="months"]' by value 10.</msg>
+<status status="PASS" starttime="20211024 23:41:24.126" endtime="20211024 23:41:24.166"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SIGN_IN.DATA_ANO}</arg>
+<arg>${DADOS.ANO}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211024 23:41:24.168" level="INFO">Selecting options from selection list 'xpath=//*[@id="account-creation_form"]//select[@id="years"]' by value 2000.</msg>
+<status status="PASS" starttime="20211024 23:41:24.167" endtime="20211024 23:41:24.205"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.NOME2}</arg>
+<arg>${DADOS.NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.206" level="INFO">Typing text 'teste' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="firstname"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.205" endtime="20211024 23:41:24.263"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.SOBRENOME2}</arg>
+<arg>${DADOS.SOBRENOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.264" level="INFO">Typing text 'automacao' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="lastname"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.263" endtime="20211024 23:41:24.317"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.ENDERECO}</arg>
+<arg>${DADOS.ENDERECO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.318" level="INFO">Typing text 'QA BRABO' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="address1"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.317" endtime="20211024 23:41:24.394"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.CIDADE}</arg>
+<arg>${DADOS.CIDADE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.395" level="INFO">Typing text 'Sao Paulo' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="city"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.394" endtime="20211024 23:41:24.443"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGN_IN.LISTA_ESTADO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.444" level="INFO">Clicking element 'xpath=//*[@id="account-creation_form"]//select[@id="id_state"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.443" endtime="20211024 23:41:24.486"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SIGN_IN.TELA_ESTADO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:24.486" endtime="20211024 23:41:24.502"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGN_IN.ESTADO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.503" level="INFO">Clicking element 'xpath=//*[@id="account-creation_form"]//select[@id="id_state"]/option[6]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.503" endtime="20211024 23:41:24.521"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.POSTCODE}</arg>
+<arg>${DADOS.POSTCODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.522" level="INFO">Typing text '12345' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="postcode"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.521" endtime="20211024 23:41:24.580"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.FONE}</arg>
+<arg>${DADOS.FONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.582" level="INFO">Typing text '123456789' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="phone_mobile"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.580" endtime="20211024 23:41:24.629"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGN_IN.ALIAS}</arg>
+<arg>${DADOS.ALIAS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.630" level="INFO">Typing text 'Bora Pra cima' into text field 'xpath=//*[@id="account-creation_form"]//input[@name="alias"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.629" endtime="20211024 23:41:24.679"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:21.146" endtime="20211024 23:41:24.679"/>
+</kw>
+<kw name="Submeter cadastro" library="kws_webautomation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGN_IN.SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211024 23:41:24.681" level="INFO">Clicking element 'xpath=//*[@id="account-creation_form"]//button[@id="submitAccount"]'.</msg>
+<status status="PASS" starttime="20211024 23:41:24.680" endtime="20211024 23:41:26.874"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:24.680" endtime="20211024 23:41:26.874"/>
+</kw>
+<kw name="Conferir se o cadastro foi efetuado com sucesso" library="kws_webautomation">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SIGN_IN.ACC_OK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211024 23:41:26.875" endtime="20211024 23:41:26.891"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:26.875" endtime="20211024 23:41:26.891"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211024 23:41:27.048" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211024 23:41:26.891" endtime="20211024 23:41:27.048"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211024 23:41:27.048" endtime="20211024 23:41:29.142"/>
+</kw>
+<status status="PASS" starttime="20211024 23:41:26.891" endtime="20211024 23:41:29.142"/>
+</kw>
+<tag>Test4</tag>
+<status status="PASS" starttime="20211024 23:41:13.479" endtime="20211024 23:41:29.143"/>
 </test>
 <doc>Aqui estarao os primeiros testes automatizados Web</doc>
-<status status="PASS" starttime="20211021 18:31:50.647" endtime="20211021 18:32:00.245"/>
+<status status="PASS" starttime="20211024 23:40:46.862" endtime="20211024 23:41:29.144"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Testar</stat>
+<stat pass="1" fail="0" skip="0">Test1</stat>
+<stat pass="1" fail="0" skip="0">Test2</stat>
+<stat pass="1" fail="0" skip="0">Test3</stat>
+<stat pass="1" fail="0" skip="0">Test4</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
 </suite>
 </statistics>
 <errors>
